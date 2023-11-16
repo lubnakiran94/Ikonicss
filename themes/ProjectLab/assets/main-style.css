@@ -1,0 +1,93 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Helvetica;
+}
+.row{
+  display: flex;
+    justify-content: space-around;
+
+}
+.custom-menu-class ul
+{
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  padding:20px;
+  gap:30px;
+  margin-right: 40px;
+}
+.custom-menu-class ul li a
+{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #761a1a;
+
+}
+.custom-menu-class ul li a:hover
+{
+  color:orange;
+}
+.logo{
+  height: 60px;
+  margin-top: 20px;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-card {
+    width: 70%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-thumbnail {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.project-details {
+    flex-grow: 1;
+    margin-left: 20px;
+   
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    
+}
+
+.project-meta {
+    margin-bottom: 10px;
+   
+}
+
+.project-author a {
+    text-decoration: none;
+    color: #0073e6; /* Add your desired color */
+}
+
+.project-date {
+    margin-left: 20px;
+   
+}
+
+.project-description {
+    
+}
