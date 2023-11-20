@@ -68,10 +68,49 @@ get_header(); ?>
         </div>
     </main>
 </div>
+<div>
+    <h3> Enjoy cup of Coffee !!!
+    </h3>
+    <?php
+   function hs_give_me_coffee() {
+   
+    $link = 'https://coffee.alexflipnote.dev/random.json';
+
+   
+    $response = wp_remote_get($link);
+
+    
+    if (is_wp_error($response)) {
+        return 'There is an error while fetching coffee';
+    }
+
+    
+    $body = wp_remote_retrieve_body( $response );
+    $body = json_decode( $body, true);
+
+    // Check if the JSON decoding was successful
+    if (!$body || !isset($body['file'])) {
+        return 'No coffee image found !!!.';
+    }
+   
+    $coffee_link = $body['file'];
+    return $coffee_link;
+}
+
+
+$our_coffee_link = hs_give_me_coffee();
+echo 'Here is your cup of coffee: <a href="' . esc_url($our_coffee_link) . '">Enjoy!</a> <br>';
+echo 'Here is your coffee image: <img src="' . esc_url( $our_coffee_link) . '" alt="Coffee Image">';
+
+
+
+    ?>
+    </div>
+
 
 <?php
 
-function hs_give_me_coffee() {
+function five_quotes() {
     $response = wp_remote_get('https://api.kanye.rest/');
     
     if (is_wp_error($response)) {
@@ -92,8 +131,9 @@ function hs_give_me_coffee() {
     <h3> Five Quotes </h3>
     <?php
     for ($i = 0; $i < 5; $i++) {
-        echo '<p>' . hs_give_me_coffee() . '</p>';
+        echo '<p>' . five_quotes() . '</p>';
     }
     ?>
+
     <?php
 
